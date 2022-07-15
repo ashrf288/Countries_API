@@ -1,26 +1,16 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
-const {getApiData} = require('./controllers/getApiDataController');
-const app=express();
+const express = require('express')
+const cors = require('cors')
+require('dotenv').config()
+const app = express()
+const { PORT } = process.env || 3001
 app.use(express.json())
-app.use(cors());
-const {PORT}=process.env || 3000;
-const {CountreyControllers}=require('./controllers/countriesControllers')
+app.use(cors())
+const router = require('./routes')
 
-/// endpoints 
-app.get('/data',getApiData)
+app.use('/v1', router)
 
-app.get('/',CountreyControllers.showAllCounteries)
-app.get('/:name',CountreyControllers.showCounteryByName)
-app.get('/by_country_code/:code',CountreyControllers.showCounteryByCountryCode)
-app.get('/currency/:cca2',CountreyControllers.getCurrency)
-app.get('/by_region/:region',CountreyControllers.getbyReagion)
-app.get('/by_language/:language',CountreyControllers.getbyLanguage)
-
-
-
-
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`)
 })
+
+module.exports = app
