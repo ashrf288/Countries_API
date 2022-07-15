@@ -7,10 +7,12 @@ app.use(express.json())
 app.use(cors())
 const router = require('./routes')
 
-app.use('/v1', router)
+app.use('/api/v1', router)
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
-})
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`)
+  })
+}
 
 module.exports = app
