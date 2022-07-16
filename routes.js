@@ -1,11 +1,12 @@
 const express = require('express')
-const { getApiData } = require('./controllers/getApiDataController')
+const { getApiData, downloadData } = require('./controllers/getApiDataController')
 const { CountreyControllers } = require('./controllers/countriesControllers')
 const wrongPathController = require('./controllers/generalControllers')
 const router = express.Router()
 
 /// endpoints
 router.get('/getApi_data', getApiData)
+router.get('/download', downloadData)
 
 router.get('/', CountreyControllers.showAllCounteries)
 router.get('/:name', CountreyControllers.showCounteryByName)

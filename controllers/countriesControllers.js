@@ -31,8 +31,7 @@ CountreyControllers.showCounteryByCountryCode = async (req, res) => {
   try {
     let country = {}
 
-    // if countryCode is not numerical value then excute the if  statement
-    //  else execute the else statement
+    // if countryCode is  numerical value then excute the else  statement
     if (isNaN(countryCode)) {
       country = await Countrey.findOne({
         $or: [{ cca2: countryCode }, { cca3: countryCode }]
