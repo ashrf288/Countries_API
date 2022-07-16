@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const mongoUrl = 'mongodb+srv://ashrf:1234@cluster0.qfd84.mongodb.net/?retryWrites=true&w=majority'
-mongoose.connect(mongoUrl)
+const { mongoDBConnectionString } = process.env
+mongoose.connect(mongoDBConnectionString)
 
 const CountreySchema = mongoose.Schema({
   name: {},

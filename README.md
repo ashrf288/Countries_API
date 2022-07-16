@@ -35,9 +35,7 @@ admin user if the request contains the header "X-ADMIN=1"
 
 
 
-## test coverge 
 
-run `npm test -- --coverage`
 
 
 ## get the api from binary code :
@@ -72,3 +70,30 @@ console.log(convertBinary(`01101100 01101100 01100001 00101111 00110001 00101110
 ```
 
  **result :** https://restcountries.com/v3.1/all
+
+
+
+
+ ## setup project 
+
+
+ 1- `npm i `
+
+ 2- create a `.env` file and copy this code to it 
+
+ ```
+ PORT=3000
+mongoDBConnectionString=mongodb+srv://ashrf:1234@cluster0.qfd84.mongodb.net/?retryWrites=true&w=majority
+ ```
+
+3- to run the project use 
+`npm start `  
+
+or to use nodemon `npm run start-dev`
+
+
+## testing 
+ 
+1- to run the tests use `npm test`
+
+2- to see test coverage use  `npm run coverage`
