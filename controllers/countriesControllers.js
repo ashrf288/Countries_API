@@ -3,9 +3,7 @@ const CountreyControllers = {}
 
 CountreyControllers.showAllCounteries = async (req, res) => {
   try {
-    const countries = await Countrey.find({}).select(
-      'name.common name.official -_id'
-    )
+    const countries = await Countrey.find({})
     await res.json({ length: countries.length, data: countries })
   } catch (e) {
     console.log(e)
