@@ -30,8 +30,7 @@ admin user if the request contains the header "X-ADMIN=1"
 |   4           |   `/api/v1/currency/:cca2`          |  get currency by cca2 **only**        |
 |   5           |   `/api/v1/by_language/:language`          |  get all countries  that uses this language **you can use full name of language or only the first 3 letters**        |
 |   6           |   `/api/v1/region/:region`          |  group all countries by region  **type region name**        |
-|   7            |   `/api/v1/data`          |  download the original api data as json file **must pass "X-ADMIN=1" to the request header**       |
-|   8            |   `/api/v1/downlaod`          |  download api data and store it in  `./countries.json` **must pass "X-ADMIN=1" to the request header**       |
+|   7            |   `/api/v1/downlaod`          |  download api data and store it in  `./countries.json` **must pass "X-ADMIN=1" to the request header**       |
 
 
 
