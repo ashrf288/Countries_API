@@ -1,5 +1,6 @@
 const request = require('supertest')
 const app = require('../index')
+const { capitalize } = require('../controllers/countriesControllers')
 
 describe('group countries by langauge   (/api/v1) endpoint', () => {
   it('get countries by language ', async () => {
@@ -19,7 +20,11 @@ describe('group countries by langauge   (/api/v1) endpoint', () => {
     const res = await request(app).get('/api/v1/by_language/wrong')
     expect(res.statusCode).toEqual(404)
     expect(res.body.message).toEqual(
-      'no countries found that uses this language'
+      'countries not found for this language'
     )
+  })
+  it('capitalize function test  ', async () => {
+    const res = capitalize('nadsoft')
+    expect(res).toEqual('Nadsoft')
   })
 })

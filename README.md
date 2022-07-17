@@ -89,7 +89,7 @@ mongoDBConnectionString=mongodb+srv://ashrf:1234@cluster0.qfd84.mongodb.net/?ret
 3- to run the project use 
 `npm start `  
 
-or to use nodemon `npm run start-dev`
+or to run it using nodemon `npm run start-dev`
 
 
 ## testing 
